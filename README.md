@@ -6,7 +6,7 @@ Contains Intellij templates for sewisoft
 # Go to 
 cd ~/.config/JetBrains/IntelliJ*
 
-# Move your current templates
+# Move your current templates if they exist
 mv templates templates_bak
 
 # Clone this repo
