@@ -1,0 +1,489 @@
+<templateSet group="SewiOdoo">
+  <template name="sewi_odoo_form" value="&lt;record id=&quot;$viewId$_view_form&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$viewName$.view.form&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;$modelName$&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;form&gt;&#10;            &lt;sheet&gt;&#10;                &lt;group&gt;&#10;                    &lt;field name=&quot;name&quot;/&gt;&#10;                &lt;/group&gt;&#10;            &lt;/sheet&gt;&#10;        &lt;/form&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="modelName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="viewName" expression="decapitalize(modelName)" defaultValue="" alwaysStopAt="false" />
+    <variable name="viewId" expression="snakeCase(modelName)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_button_object" value="&lt;button name=&quot;$buttonName$&quot; type=&quot;object&quot; string=&quot;$buttonString$&quot;/&gt;" description="Button" toReformat="false" toShortenFQNames="true">
+    <variable name="buttonName" expression="" defaultValue="buttonName" alwaysStopAt="true" />
+    <variable name="buttonString" expression="capitalize(underscoresToSpaces(buttonName))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_qweb_add_template" value="&lt;template id=&quot;UNIQUE_ID&quot;&gt;&#10;    &lt;t t-call=&quot;report.html_container&quot;&gt; &#10;        &lt;t t-call=&quot;report.internal_layout&quot;&gt;&#10;        &lt;!-- &lt;t t-call=&quot;report.external_layout&quot;&gt; --&gt;&#10;            &lt;div class=&quot;page&quot;&gt;&#10;                &lt;h2&gt;TITLE FOR YOUR REPORT&lt;/h2&gt;&#10;                &lt;!--&#10;                Build your report here!&#10;                Do it in awesome way ;)&#10;                --&gt;&#10;            &lt;/div&gt;&#10;        &lt;/t&gt;&#10;    &lt;/t&gt;&#10;&lt;/template&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_button_box_object" value="&lt;div class=&quot;oe_button_box&quot; name=&quot;button_box&quot;&gt;&#10;    &lt;button name=&quot;$toggle_active$&quot;&#10;            type=&quot;$object$&quot;&#10;            confirm=&quot;$confirm$&quot;&#10;            class=&quot;oe_stat_button&quot;&#10;            icon=&quot;$icon$&quot;&gt;&#10;            &lt;field name=&quot;active&quot; widget=&quot;boolean_button&quot; options='{&quot;terminology&quot;: &quot;archive&quot;}'/&gt;&#10;    &lt;/button&gt;&#10;&lt;/div&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="toggle_active" expression="" defaultValue="&quot;toggle_active&quot;" alwaysStopAt="true" />
+    <variable name="object" expression="" defaultValue="&quot;object&quot;" alwaysStopAt="true" />
+    <variable name="confirm" expression="" defaultValue="&quot;(Un)archiving a project automatically (un)archives its tasks and issues. Do you want to proceed?&quot;" alwaysStopAt="true" />
+    <variable name="icon" expression="" defaultValue="&quot;fa-archive&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_smart_button" value="&lt;button class=&quot;oe_stat_button&quot; name=&quot;action_$category$_view&quot; icon=&quot;$icon$&quot; type=&quot;$object$&quot;&gt;&#10;    &lt;div class=&quot;o_form_field o_stat_info&quot;&gt;&#10;        &lt;span class=&quot;o_stat_value&quot;&gt;&#10;            &lt;field name=&quot;$categoryString$_count&quot;/&gt;&#10;        &lt;/span&gt;&#10;        &lt;span class=&quot;o_stat_text&quot;&gt;$categoryString2$&lt;/span&gt;&#10;    &lt;/div&gt;&#10;&lt;/button&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="category" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="icon" expression="" defaultValue="&quot;fa-th-large&quot;" alwaysStopAt="true" />
+    <variable name="object" expression="" defaultValue="&quot;object&quot;" alwaysStopAt="true" />
+    <variable name="categoryString" expression="decapitalize(category)" defaultValue="" alwaysStopAt="false" />
+    <variable name="categoryString2" expression="capitalize(underscoresToSpaces(category))" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_data" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;odoo&gt;&#10;    &lt;data noupdate=&quot;1&quot;&gt;&#10;        &#10;        &#10;    &#10;    &lt;/data&gt;&#10;&lt;/odoo&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_qweb_declare_reports" value="&lt;!-- QWeb Reports --&gt;&#10;&lt;!-- NAME &amp; FILE_NAME should be the same --&gt;&#10;        &lt;report&#10;            id=&quot;UNIQUE_REPORT_ID&quot;&#10;            model=&quot;MODEL_WHERE_THE_REPORT_WILL_BE_PRINTED&quot;&#10;            report_type=&quot;qweb-pdf&quot;&#10;            string=&quot;LABEL&quot;&#10;            name=&quot;NAME&quot;&#10;            file=&quot;FILE_NAME&quot;&#10;        /&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_domain" value="domain=&quot;[('$fieldName$', '$operator$', $value$)]&quot;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field&quot;" alwaysStopAt="true" />
+    <variable name="operator" expression="" defaultValue="&quot;=&quot;" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="&quot;value&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_field" value="&lt;field name=&quot;$jump$&quot;/&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="jump" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_field_state" value="&lt;field name=&quot;state&quot; widget=&quot;statusbar&quot; statusbar_visible=&quot;$jump$&quot;/&gt;&#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="jump" expression="" defaultValue="&quot;open,done&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_form_header" value="&lt;header&gt;&#10;    &lt;button name=&quot;$buttonName$&quot; string=&quot;$buttonName2$&quot; class=&quot;oe_highlight&quot; states=&quot;$jump$&quot; type=&quot;$jump2$&quot;/&gt;&#10;    &lt;field name=&quot;state&quot; widget=&quot;statusbar&quot; statusbar_visible=&quot;open,done&quot; statusbar_colors=&quot;{'open':'blue', 'done':'green'}&quot;/&gt;&#10;&lt;/header&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="buttonName" expression="" defaultValue="&quot;button_name&quot;" alwaysStopAt="true" />
+    <variable name="buttonName2" expression="capitalize(underscoresToSpaces(buttonName))" defaultValue="" alwaysStopAt="true" />
+    <variable name="jump" expression="" defaultValue="&quot;open,done&quot;" alwaysStopAt="true" />
+    <variable name="jump2" expression="" defaultValue="&quot;object&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_form_inherit" value="&lt;!-- Inherit Form View to Modify it --&gt;&#10;&lt;record id=&quot;$extraContentInput$&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$extraContentInput2$&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;$modelName$&lt;/field&gt;&#10;    &lt;field name=&quot;inherit_id&quot; ref=&quot;$jump$.$extraContent$&quot;/&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &#10;        &lt;xpath expr=&quot;//field[@name='name']&quot; position=&quot;&quot;&gt;&#10;            &lt;!-- Add your fields or attributes here --&gt;&#10;        &lt;/xpath&gt;&#10;        &#10;        &lt;field name=&quot;name&quot; position=&quot;&quot;&gt;&#10;            &lt;!-- Add your fields or attributes here --&gt;&#10;        &lt;/field&gt;&#10;        &#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="modelName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="jump" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extraContent" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extraContentInput" expression="snakeCase(extraContent)" defaultValue="" alwaysStopAt="false" />
+    <variable name="extraContentInput2" expression="regularExpression(extraContent, &quot;_&quot;, &quot;\.&quot;)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_menu" value="&lt;menuitem id=&quot;$moduleName$_menu_root&quot;&#10;          name=&quot;$moduleName1$_menu_root&quot;&#10;          string=&quot;$moduleName2$&quot;&#10;          sequence=&quot;10&quot;&#10;          web_icon=&quot;$moduleName1$,static/description/icon.png&quot;/&gt;&#10;&#10;&lt;menuitem id=&quot;$moduleName1$_$categName$_menu_categ&quot;&#10;          name=&quot;$moduleName1$_$categName1$_menu_categ&quot;&#10;          parent=&quot;$moduleName1$_menu_root&quot;&#10;          string=&quot;$categName2$&quot;&#10;          sequence=&quot;10&quot;/&gt;&#10;&#10;&lt;record id=&quot;$modelName2$_view_action&quot; model=&quot;ir.actions.act_window&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$modelName$.view.action&lt;/field&gt;&#10;    &lt;field name=&quot;type&quot;&gt;ir.actions.act_window&lt;/field&gt;&#10;    &lt;field name=&quot;res_model&quot;&gt;$modelName1$&lt;/field&gt;&#10;    &lt;field name=&quot;view_mode&quot;&gt;tree,form&lt;/field&gt;&#10;    &lt;field name=&quot;help&quot; type=&quot;html&quot;&gt;&#10;      &lt;p class=&quot;oe_view_nocontent_create&quot;&gt;&#10;        &lt;!-- Add Text Here --&gt;&#10;      &lt;/p&gt;&lt;p&gt;&#10;        &lt;!-- More details about what a user can do with this object will be OK --&gt;&#10;      &lt;/p&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;&#10;&#10;&lt;menuitem id=&quot;$modelName2$_$actionName$_menu_action&quot;&#10;          name=&quot;$modelName2$_$actionName1$_menu_action&quot;&#10;          parent=&quot;$moduleName1$_$categName1$_menu_categ&quot;&#10;          action=&quot;$modelName2$_view_action&quot;&#10;          sequence=&quot;10&quot;/&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="moduleName" expression="" defaultValue="&quot;module_name&quot;" alwaysStopAt="true" />
+    <variable name="categName" expression="" defaultValue="&quot;categ_name&quot;" alwaysStopAt="true" />
+    <variable name="modelName" expression="" defaultValue="&quot;model.name&quot;" alwaysStopAt="true" />
+    <variable name="actionName" expression="" defaultValue="&quot;action_name&quot;" alwaysStopAt="true" />
+    <variable name="moduleName1" expression="decapitalize(moduleName)" defaultValue="" alwaysStopAt="false" />
+    <variable name="moduleName2" expression="capitalize(underscoresToSpaces(moduleName))" defaultValue="" alwaysStopAt="false" />
+    <variable name="categName2" expression="capitalize(underscoresToSpaces(categName))" defaultValue="" alwaysStopAt="false" />
+    <variable name="categName1" expression="decapitalize(spacesToUnderscores(categName))" defaultValue="" alwaysStopAt="false" />
+    <variable name="modelName2" expression="snakeCase(modelName)" defaultValue="" alwaysStopAt="false" />
+    <variable name="modelName1" expression="decapitalize(modelName)" defaultValue="" alwaysStopAt="false" />
+    <variable name="actionName1" expression="decapitalize(actionName)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_menu_categ" value="&lt;menuitem id=&quot;$moduleName$_$categName$_menu_categ&quot;&#10;          name=&quot;$moduleName1$_$categName1$_menu_categ&quot;&#10;          parent=&quot;$moduleName1$_menu_root&quot;&#10;          string=&quot;$categName2$&quot;&#10;          sequence=&quot;10&quot;/&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="moduleName" expression="" defaultValue="&quot;module_name&quot;" alwaysStopAt="true" />
+    <variable name="categName" expression="" defaultValue="&quot;categ_name&quot;" alwaysStopAt="true" />
+    <variable name="moduleName1" expression="decapitalize(moduleName)" defaultValue="" alwaysStopAt="false" />
+    <variable name="categName1" expression="decapitalize(categName)" defaultValue="" alwaysStopAt="false" />
+    <variable name="categName2" expression="capitalize(underscoresToSpaces(categName))" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_menu_action" value="&lt;record id=&quot;$modelName1$_view_action&quot; model=&quot;ir.actions.act_window&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$modelName2$.view.action&lt;/field&gt;&#10;    &lt;field name=&quot;type&quot;&gt;ir.actions.act_window&lt;/field&gt;&#10;    &lt;field name=&quot;res_model&quot;&gt;$modelName$&lt;/field&gt;&#10;    &lt;field name=&quot;view_mode&quot;&gt;tree,form&lt;/field&gt;&#10;    &lt;field name=&quot;help&quot; type=&quot;html&quot;&gt;&#10;      &lt;p class=&quot;oe_view_nocontent_create&quot;&gt;&#10;        &lt;!-- Add Text Here --&gt;&#10;      &lt;/p&gt;&lt;p&gt;&#10;        &lt;!-- More details about what a user can do with this object will be OK --&gt;&#10;      &lt;/p&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;&#10;&#10;&lt;menuitem id=&quot;$modelName1$_$actionName$_menu_action&quot;&#10;          name=&quot;$modelName1$_$actionName1$_menu_action&quot;&#10;          parent=&quot;$jump$&quot;&#10;          action=&quot;$modelName1$_view_action&quot;&#10;          sequence=&quot;10&quot;/&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="modelName" expression="" defaultValue="&quot;model.name&quot;" alwaysStopAt="true" />
+    <variable name="actionName" expression="" defaultValue="&quot;action_name&quot;" alwaysStopAt="true" />
+    <variable name="jump" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="modelName1" expression="snakeCase(modelName)" defaultValue="" alwaysStopAt="false" />
+    <variable name="modelName2" expression="decapitalize(modelName)" defaultValue="" alwaysStopAt="false" />
+    <variable name="actionName1" expression="decapitalize(actionName)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_kanban" value="&lt;record id=&quot;$saleOrder2$_view_kanban&quot; model=&quot;ir.ui.view&quot;&gt;&#10; &lt;field name=&quot;name&quot;&gt;$saleOrder1$.kanban&lt;/field&gt;&#10;  &lt;field name=&quot;model&quot;&gt;$saleOrder$&lt;/field&gt;&#10;     &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;kanban&gt;&#10;            &lt;field name=&quot;name&quot;/&gt;&#10;                &lt;templates&gt;&#10;                    &lt;t t-name=&quot;kanban-box&quot;&gt;&#10;                    &lt;/t&gt;&#10;                &lt;/templates&gt;&#10;        &lt;/kanban&gt;&#10;     &lt;/field&gt;&#10;&lt;/record&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="saleOrder" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="saleOrder1" expression="decapitalize(saleOrder)" defaultValue="" alwaysStopAt="false" />
+    <variable name="saleOrder2" expression="snakeCase(saleOrder)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_form_social" value="&lt;div class=&quot;oe_chatter&quot;&gt;&#10;    &lt;field name=&quot;message_follower_ids&quot; widget=&quot;mail_followers&quot;/&gt;&#10;    &lt;field name=&quot;message_ids&quot; widget=&quot;mail_thread&quot;/&gt;&#10;&lt;/div&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_form_title" value="&lt;div class=&quot;oe_title&quot;&gt;&#10;    &lt;label for=&quot;name&quot; class=&quot;oe_edit_only&quot;/&gt;&#10;    &lt;h1&gt;&#10;        &lt;field name=&quot;name&quot; placeholder=&quot;......&quot;/&gt;&#10;    &lt;/h1&gt;&#10;&lt;/div&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_notebook" value="&lt;notebook&gt;&#10;    &lt;page string=&quot;$string$&quot; name=&quot;$name$&quot;&gt;&#10;        &lt;group&gt;&#10;            &lt;field name=&quot;$fieldName$&quot;/&gt;&#10;        &lt;/group&gt;&#10;    &lt;/page&gt;&#10;&lt;/notebook&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="string" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="fieldName" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_search" value="&lt;record id=&quot;$modelName2$_view_search&quot; model=&quot;ir.ui.view&quot;&gt;&#10;   &lt;field name=&quot;name&quot;&gt;$modelName1$.view.search&lt;/field&gt;&#10;   &lt;field name=&quot;model&quot;&gt;$modelName$&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;search&gt;&#10;            &lt;field name=&quot;name&quot; string=&quot;Product&quot; filter_domain=&quot;['|',('default_code','ilike',self),('name','ilike',self)]&quot;/&gt;&#10;            &lt;filter string=&quot;Archive&quot; domain=&quot;[('active', '=', False)]&quot;/&gt;&#10;            &lt;separator/&gt;&#10;            &lt;group&gt;&#10;                &lt;filter string=&quot;State&quot; context=&quot;{'group_by': 'state'}&quot;/&gt;&#10;            &lt;/group&gt;&#10;        &lt;/search&gt;&#10;   &lt;/field&gt;&#10;&lt;/record&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="modelName" expression="" defaultValue="&quot;model.name&quot;" alwaysStopAt="true" />
+    <variable name="modelName1" expression="decapitalize(modelName)" defaultValue="" alwaysStopAt="false" />
+    <variable name="modelName2" expression="snakeCase(modelName)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_search_inherit" value="&lt;record id=&quot;$extraContent1$&quot; model=&quot;ir.ui.view&quot;&gt;&#10;&lt;field name=&quot;name&quot;&gt;$extraContent2$&lt;/field&gt;&#10;&lt;field name=&quot;model&quot;&gt;$modelName$&lt;/field&gt;&#10;&lt;field name=&quot;inherit_id&quot; ref=&quot;$jump$.$extraContent$&quot;/&gt;&#10;&lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;    &lt;search&gt;&#10;        &lt;field name=&quot;name&quot; string=&quot;Product&quot; filter_domain=&quot;['|',('default_code','ilike',self),('name','ilike',self)]&quot;/&gt;&#10;        &lt;separator/&gt;&#10;        &lt;filter string=&quot;Archive&quot; domain=&quot;[('active', '=', False)]&quot;/&gt;&#10;        &lt;group&gt;&#10;            &lt;filter string=&quot;State&quot; context=&quot;{'group_by': 'state'}&quot;/&gt;&#10;        &lt;/group&gt;&#10;    &lt;/search&gt;&#10;&lt;/field&gt;&#10;&lt;/record&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="modelName" expression="" defaultValue="&quot;model.name&quot;" alwaysStopAt="true" />
+    <variable name="jump" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extraContent" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extraContent1" expression="decapitalize(extraContent)" defaultValue="" alwaysStopAt="false" />
+    <variable name="extraContent2" expression="regularExpression(extraContent, &quot;_&quot;, &quot;\.&quot;)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_security" value="&lt;record id=&quot;module_category_$moduleName$&quot; model=&quot;ir.module.category&quot;&gt;&#10;&lt;field name=&quot;name&quot;&gt;$moduleName2$&lt;/field&gt;&#10;&lt;field name=&quot;sequence&quot; eval=&quot;99&quot;/&gt;&#10;&lt;/record&gt;&#10;&#10;&lt;record id=&quot;group_$moduleName1$_user&quot; model=&quot;res.groups&quot;&gt;&#10;&lt;field name=&quot;name&quot;&gt;User&lt;/field&gt;&#10;&lt;field name=&quot;category_id&quot; ref=&quot;module_category_$moduleName1$&quot;/&gt;&#10;&lt;field name=&quot;implied_ids&quot; eval=&quot;[(4, ref('base.group_user'))]&quot;/&gt;&#10;&lt;/record&gt;&#10;&#10;&lt;record id=&quot;group_$moduleName1$_manager&quot; model=&quot;res.groups&quot;&gt;&#10;&lt;field name=&quot;name&quot;&gt;Manager&lt;/field&gt;&#10;&lt;field name=&quot;implied_ids&quot; eval=&quot;[(4, ref('group_$moduleName1$_user'))]&quot;/&gt;&#10;&lt;field name=&quot;category_id&quot; ref=&quot;module_category_$moduleName1$&quot;/&gt;&#10;&lt;field name=&quot;users&quot; eval=&quot;[(4, ref('base.user_root'))]&quot;/&gt;&#10;&lt;/record&gt;&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="moduleName" expression="" defaultValue="&quot;module_name&quot;" alwaysStopAt="true" />
+    <variable name="moduleName1" expression="decapitalize(moduleName)" defaultValue="" alwaysStopAt="false" />
+    <variable name="moduleName2" expression="capitalize(underscoresToSpaces(moduleName))" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_tree" value="&lt;record id=&quot;$modelName2$_view_tree&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$modelName1$.view.tree&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;$modelName$&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;tree&gt;&#10;            &lt;field name=&quot;name&quot;/&gt;&#10;        &lt;/tree&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="modelName" expression="" defaultValue="&quot;model.name&quot;" alwaysStopAt="true" />
+    <variable name="modelName1" expression="decapitalize(modelName)" defaultValue="" alwaysStopAt="false" />
+    <variable name="modelName2" expression="snakeCase(modelName)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_xpath" value="&lt;xpath expr=&quot;//field[@name='$1$']&quot; position=&quot;$2$&quot;&gt;&#10;    $3$&#10;&lt;/xpath&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="1" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="2" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="3" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_assets_backend" value="&lt;template id=&quot;assets_backend&quot; name=&quot;$moduleName$_assets&quot; inherit_id=&quot;web.assets_backend&quot;&gt;&#10;&lt;xpath expr=&quot;.&quot; position=&quot;inside&quot;&gt;&#10;    &lt;link rel=&quot;stylesheet&quot; href=&quot;/$moduleName1$/static/src/less/$moduleName1$.less&quot;/&gt;&#10;    &lt;script type=&quot;text/javascript&quot; src=&quot;/$moduleName1$/static/src/js/$moduleName1$.js&quot;/&gt;&#10;&lt;/xpath&gt;&#10;&lt;/template&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="moduleName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="moduleName1" expression="decapitalize(moduleName)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_tree_inherit" value="&lt;record id=&quot;$extraContent1$&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$extraContent2$&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;$modelName$&lt;/field&gt;&#10;    &lt;field name=&quot;inherit_id&quot; ref=&quot;$jump$.$extraContent$&quot;/&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &#10;        &lt;xpath expr=&quot;//field[@name='name']&quot; position=&quot;&quot;&gt;&#10;            &lt;!-- Add new fields here --&gt;&#10;        &lt;/xpath&gt;&#10;        &#10;    &lt;/field&gt;&#10;&lt;/record&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="modelName" expression="" defaultValue="&quot;model.name&quot;" alwaysStopAt="true" />
+    <variable name="jump" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extraContent" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="extraContent1" expression="decapitalize(extraContent)" defaultValue="" alwaysStopAt="false" />
+    <variable name="extraContent2" expression="regularExpression(extraContent, &quot;_&quot;, &quot;\.&quot;)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_xpath_help" value="&lt;xpath expr=&quot;//field[@name='$fieldName$']&quot; position=&quot;$position$&quot;&gt;&#10;    &lt;!-- /:  Direct child--&gt;&#10;    &lt;!-- //: Child any depth--&gt;&#10;    &lt;!-- /..: Parent --&gt;&#10;    &lt;!-- hasclass(&quot;classname&quot;): Find by class--&gt;&#10;    &lt;!-- div[1]: Find first div--&gt;&#10;    $end$&#10;&lt;/xpath&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="position" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="end" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_manifest" value="{&#10;  &quot;name&quot;: &quot;$name$&quot;,&#10;  &quot;summary&quot;: &quot;&quot;&quot;&#10;    $summary$&#10;  &quot;&quot;&quot;,&#10;  &quot;author&quot;: &quot;sewisoft&quot;,&#10;  &quot;license&quot;: &quot;LGPL-3&quot;,&#10;  &quot;website&quot;: &quot;https://sewisoft.de&quot;,&#10;  &quot;application&quot;: $autoInstall$,&#10;  &quot;sequence&quot;: 1,&#10;  &quot;category&quot;: &quot;$category$&quot;,&#10;  &quot;version&quot;: &quot;16.0.1.0.0&quot;,&#10;  &quot;depends&quot;: [&#10;    &quot;base&quot;,&#10;  ],&#10;  &quot;installable&quot;: True,&#10;  &quot;auto_install&quot;: False,&#10;  # &quot;data&quot;: [&#10;  #   &quot;security/ir.model.access.csv&quot;,&#10;  #   &quot;views/views.xml&quot;,&#10;  #   &quot;views/templates.xml&quot;,&#10;  # ],&#10;  # &quot;external_dependencies&quot;: {&#10;  #   &quot;python&quot;: [&#10;  # &#10;  #   ]},&#10;  # &#10;  # &quot;pre_init_hook&quot;: &quot;pre_init_hook&quot;,&#10;  # &quot;post_init_hook&quot;: &quot;post_init_hook&quot;,&#10;  # &quot;uninstall_hook&quot;: &quot;uninstall_hook&quot;&#10;  # &quot;demo&quot;: [&#10;  #   &quot;demo/demo.xml&quot;,&#10;  # ],&#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="summary" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="autoInstall" expression="" defaultValue="&quot;False&quot;" alwaysStopAt="true" />
+    <variable name="category" expression="" defaultValue="&quot;Uncategorized&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_field_date" value="$fieldName$ = fields.Date(string=&quot;$string$&quot;)&#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(fieldName,&quot;sewi_&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_field_binary" value="$fieldName$ = fields.Binary(string=&quot;$string$&quot;)&#10;$END$&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(fieldName,&quot;sewi_&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_field_boolean" value="$fieldName$ = fields.Boolean(string=&quot;$string$&quot;)&#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(fieldName,&quot;sewi_&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_field_char" value="$fieldName$ = fields.Char(string=&quot;$string$&quot;)&#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(fieldName,&quot;sewi_&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_field_datetime" value="$fieldName$ = fields.Datetime(string=&quot;$string$&quot;)&#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(fieldName,&quot;sewi_&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_field_float" value="$fieldName$ = fields.Float(string=&quot;$string$&quot;)&#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(fieldName,&quot;sewi_&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_field_html" value="$fieldName$ = fields.HTML(string=&quot;$string$&quot;)&#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(fieldName,&quot;sewi_&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_field_integer" value="$fieldName$ = fields.Integer(string=&quot;$string$&quot;)&#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(fieldName,&quot;sewi_&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_field_selection" value="$fieldName$ = fields.Selection(&#10;    string=&quot;$string$&quot;, &#10;    selection=[(&quot;$value1$&quot;, &quot;$Name1$&quot;), (&quot;$value2$&quot;, &quot;$Name2$&quot;), ]&#10;)&#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(fieldName,&quot;sewi_&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <variable name="value1" expression="" defaultValue="&quot;val_a&quot;" alwaysStopAt="true" />
+    <variable name="Name1" expression="capitalize(value1)" defaultValue="" alwaysStopAt="true" />
+    <variable name="value2" expression="" defaultValue="&quot;val_b&quot;" alwaysStopAt="true" />
+    <variable name="Name2" expression="capitalize(value2)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_field_many2one" value="$fieldName$ = fields.Many2one(&#10;    comodel_name=&quot;$comodelName$&quot;, &#10;    string=&quot;$string$&quot;&#10;)&#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="comodelName" expression="" defaultValue="&quot;res.partner&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(fieldName,&quot;sewi_|_id&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_field_text" value="$fieldName$ = fields.Text(string=&quot;$string$&quot;)&#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(fieldName,&quot;sewi_&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_field_many2many" value="$fieldName$ = fields.Many2many(&#10;    comodel_name=&quot;$comodelName$&quot;, &#10;    string=&quot;$string$&quot;,&#10;    column1=&quot;$column1$&quot;, &#10;    column2=&quot;$column2$&quot;,&#10;    relation=&quot;$relation$&quot;,  &#10;)&#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="comodelName" expression="" defaultValue="&quot;res.partner&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(fieldName,&quot;sewi_|_ids&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <variable name="column1" expression="concat(snakeCase(pyClassName()),&quot;_id&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="column2" expression="regularExpression(fieldName,&quot;_ids&quot;,&quot;_id&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="relation" expression="concat(snakeCase(pyClassName()), &quot;_&quot;, regularExpression(comodelName,&quot;\\.&quot;,&quot;_&quot;), &quot;_rel&quot;)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_field_one2many" value="$fieldName$ = fields.One2many(&#10;    comodel_name=&quot;$comodelName$&quot;, &#10;    inverse_name=&quot;$inverseFieldName$&quot;, &#10;    string=&quot;$string$&quot;&#10;)&#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="comodelName" expression="" defaultValue="&quot;res.partner&quot;" alwaysStopAt="true" />
+    <variable name="inverseFieldName" expression="" defaultValue="&quot;inverse_field_name(m2o)&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(regularExpression(fieldName,&quot;_ids?&quot;,&quot; &quot;),&quot;sewi_|_ids&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_field_monetary" value="$fieldName$ = fields.Monetary(&#10;    string=&quot;$string$&quot;, &#10;    currency_field=&quot;$currencyField$&quot;&#10;)&#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(regularExpression(fieldName,&quot;_ids&quot;,&quot; &quot;),&quot;sewi_&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <variable name="currencyField" expression="" defaultValue="currency_id" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_field_reference" value="$fieldName$ = fields.Reference(&#10;    string=&quot;$string$&quot;, &#10;    selection=[(&quot;$modelName$&quot;, &quot;$modelName$&quot;)]&#10;)&#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(regularExpression(fieldName,&quot;_ids&quot;,&quot;&quot;),&quot;sewi_&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <variable name="modelName" expression="" defaultValue="&quot;model.name&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_onchange" value="@api.onchange(&quot;$fieldName$&quot;)&#10;def _onchange_$onChangeName$(self):&#10;    self.$onChangeName$ = &quot;&quot;&#10;    &#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="onChangeName" expression="decapitalize(fieldName)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_compute" value="@api.depends(&quot;$fieldName$&quot;)&#10;def _compute_$computeName$(self):&#10;    for s in self:&#10;        s.$fieldName$ = &quot;&quot;&#10;    &#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="computeName" expression="decapitalize(fieldName)" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_create" value="@api.model&#10;def create(self, vals):&#10;    return super($ClassName$, self).create(vals)" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="ClassName" expression="" defaultValue="&quot;ClassName&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_module" value="from odoo import api, fields, models, _&#10;&#10;&#10;class $ClassName$(models.Model):&#10;&#10;    # Private Attributes&#10;    _name = &quot;$ModelName$&quot;&#10;    _description = &quot;$description$&quot;&#10;&#10;    # Default methods&#10;    &#10;    # Fields declaration&#10;    $fieldName$ = fields.Char(string=&quot;$string$&quot;)&#10;    &#10;    # Compute, inverse, search&#10;    &#10;    # Constraints and onChanges&#10;    &#10;    # CRUD methods (and name_get, name_search, ...) overrides&#10;    &#10;    # Action methods&#10;    &#10;    # Business methods&#10;&#10;    &#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="ClassName" expression="" defaultValue="&quot;ClassName&quot;" alwaysStopAt="true" />
+    <variable name="ModelName" expression="decapitalize(regularExpression(snakeCase(ClassName),&quot;_&quot;,&quot;.&quot;))" defaultValue="" alwaysStopAt="true" />
+    <variable name="description" expression="concat(&quot;This model represents &quot;, spaceSeparated(regularExpression(ClassName, &quot;Sewi&quot;, &quot;&quot;)), &quot;.&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="fieldName" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(fieldName,&quot;sewi_&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_module_inherit" value="from odoo import api, fields, models, _&#10;&#10;&#10;class $ClassName$(models.Model):&#10;    &#10;    # Private Attributes&#10;    _inherit = &quot;$ModelName$&quot;&#10;&#10;    # Default methods&#10;&#10;    # Fields declaration&#10;    $fieldName$ = fields.Char(string=&quot;$string$&quot;)&#10;&#10;    # Compute, inverse, search&#10;&#10;    # Constraints and onChanges&#10;&#10;    # CRUD methods (and name_get, name_search, ...) overrides&#10;&#10;    # Action methods&#10;&#10;    # Business methods&#10;&#10;    &#10;    &#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="ClassName" expression="" defaultValue="&quot;ClassName&quot;" alwaysStopAt="true" />
+    <variable name="ModelName" expression="decapitalize(regularExpression(snakeCase(ClassName),&quot;_&quot;,&quot;.&quot;))" defaultValue="" alwaysStopAt="true" />
+    <variable name="fieldName" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(regularExpression(fieldName,&quot;sewi_&quot;,&quot; &quot;)))" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_test" value="from odoo import api, fields, models, _&#10;from odoo.tests.common import TransactionCase&#10;&#10;       &#10;class $TestModuleName$(TransactionCase):&#10;&#10;    def setUp(self):&#10;        super($TestModuleName$, self).setUp()&#10;                &#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="TestModuleName" expression="" defaultValue="&quot;TestModuleName&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_unlink" value="def unlink(self):&#10;    return super($className$, self).unlink()&#10;    &#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="className" expression="" defaultValue="&quot;className&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_write" value="def write(self, values):&#10;    return super($ClassName$, self).write(values)&#10;    &#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="ClassName" expression="" defaultValue="&quot;ClassName&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_default" value="def _default_$defaultValue$(self):&#10;    return &quot;value&quot;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="defaultValue" expression="" defaultValue="&quot;sewi_var&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_constraint" value="@api.constrains(&quot;$constraint$&quot;)&#10;def _check_$constraint$(self):&#10;    pass&#10;    &#10;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="constraint" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_inverse" value="def _inverse_$inverseName$(self):&#10;    self.$inverseName$ = '$val$'&#10;    &#10;$END$&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="inverseName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="val" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_x2many_1_update_existing" value="[(1, $id$, {&#10;    &quot;$key$&quot;: &quot;$value$&quot;&#10;})]" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_x2many_6_replace_all" value="[(6, False, $id_list$)]" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="id_list" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_x2many_4_add_existing" value="[(4, $id$, False)]" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_x2many_2_remove_and_delete" value="[(2, $id$, False)]" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_x2many_0_add_values" value="[(0, False, {&#10;    &quot;$key$&quot;: &quot;$value$&quot;&#10;})]" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="key" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="value" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_x2many_3_remove_but_keep" value="[(3, $id$, False)]" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="id" expression="" defaultValue="" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_x2many_5_remove_all" value="[(5, False, False)]" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="Python" value="true" />
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_scss_11_spacings" value=".m[t,b,l,r][0,4,8,16,24,32,48,64,92,96,128]" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_scss_12_spacings" value=".[m,b][t,b,l,r,x,y]-[1,2,3,4,5,auto]" description="CSS" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;odoo&gt;&#10;    &#10;&lt;/odoo&gt;" description="XML" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+</templateSet>
