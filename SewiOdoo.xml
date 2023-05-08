@@ -481,7 +481,16 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="sewi_odoo_xml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;odoo&gt;&#10;    &#10;&lt;/odoo&gt;" description="XML" toReformat="false" toShortenFQNames="true">
+  <template name="sewi_odoo_xml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;odoo&gt;&#10;    &#10;&lt;/odoo&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_menu_root" value=" &lt;menuitem id=&quot;$moduleName$_menu_root&quot;&#10;           name=&quot;$menuName$&quot;&#10;           web_icon=&quot;$moduleName$,static/description/icon.png&quot;&#10;           action=&quot;$actionName$&quot;&#10;           sequence=&quot;$sequence$&quot;/&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="moduleName" expression="groovyScript(&quot;_1.split('/')[-3]&quot;, fileRelativePath()) " defaultValue="" alwaysStopAt="true" />
+    <variable name="menuName" expression="" defaultValue="&quot;menuName&quot;" alwaysStopAt="true" />
+    <variable name="actionName" expression="" defaultValue="&quot;base.action_res_users&quot;" alwaysStopAt="true" />
+    <variable name="sequence" expression="" defaultValue="&quot;10&quot;" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
