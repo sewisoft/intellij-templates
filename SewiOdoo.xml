@@ -7,7 +7,7 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="sewi_odoo_xml_button_object" value="&lt;button name=&quot;$buttonName$&quot; type=&quot;object&quot; string=&quot;$buttonString$&quot;/&gt;" description="Button" toReformat="false" toShortenFQNames="true">
+  <template name="sewi_odoo_toDo_xml_button_object" value="&lt;button name=&quot;$buttonName$&quot; type=&quot;object&quot; string=&quot;$buttonString$&quot;/&gt;" description="Button" toReformat="false" toShortenFQNames="true">
     <variable name="buttonName" expression="" defaultValue="buttonName" alwaysStopAt="true" />
     <variable name="buttonString" expression="capitalize(underscoresToSpaces(buttonName))" defaultValue="" alwaysStopAt="true" />
     <context>
@@ -19,7 +19,7 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="sewi_odoo_xml_button_box_object" value="&lt;div class=&quot;oe_button_box&quot; name=&quot;button_box&quot;&gt;&#10;    &lt;button name=&quot;$toggle_active$&quot;&#10;            type=&quot;$object$&quot;&#10;            confirm=&quot;$confirm$&quot;&#10;            class=&quot;oe_stat_button&quot;&#10;            icon=&quot;$icon$&quot;&gt;&#10;            &lt;field name=&quot;active&quot; widget=&quot;boolean_button&quot; options='{&quot;terminology&quot;: &quot;archive&quot;}'/&gt;&#10;    &lt;/button&gt;&#10;&lt;/div&gt;" description="" toReformat="false" toShortenFQNames="true">
+  <template name="sewi_odoo_toDo_xml_button_box_object" value="&lt;div class=&quot;oe_button_box&quot; name=&quot;button_box&quot;&gt;&#10;    &lt;button name=&quot;$toggle_active$&quot;&#10;            type=&quot;$object$&quot;&#10;            confirm=&quot;$confirm$&quot;&#10;            class=&quot;oe_stat_button&quot;&#10;            icon=&quot;$icon$&quot;&gt;&#10;            &lt;field name=&quot;active&quot; widget=&quot;boolean_button&quot; options='{&quot;terminology&quot;: &quot;archive&quot;}'/&gt;&#10;    &lt;/button&gt;&#10;&lt;/div&gt;" description="" toReformat="false" toShortenFQNames="true">
     <variable name="toggle_active" expression="" defaultValue="&quot;toggle_active&quot;" alwaysStopAt="true" />
     <variable name="object" expression="" defaultValue="&quot;object&quot;" alwaysStopAt="true" />
     <variable name="confirm" expression="" defaultValue="&quot;(Un)archiving a project automatically (un)archives its tasks and issues. Do you want to proceed?&quot;" alwaysStopAt="true" />
@@ -38,7 +38,7 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="sewi_odoo_xml_data" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;odoo&gt;&#10;    &lt;data noupdate=&quot;1&quot;&gt;&#10;        &#10;        &#10;    &#10;    &lt;/data&gt;&#10;&lt;/odoo&gt;" description="" toReformat="false" toShortenFQNames="true">
+  <template name="sewi_odoo_toDo_xml_data" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;odoo&gt;&#10;    &lt;data noupdate=&quot;1&quot;&gt;&#10;        &#10;        &#10;    &#10;    &lt;/data&gt;&#10;&lt;/odoo&gt;" description="" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="XML" value="true" />
     </context>
@@ -56,7 +56,7 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="sewi_odoo_xml_field" value="&lt;field name=&quot;$jump$&quot;/&gt;" description="" toReformat="false" toShortenFQNames="true">
+  <template name="sewi_odoo_toDo_xml_field" value="&lt;field name=&quot;$jump$&quot;/&gt;" description="" toReformat="false" toShortenFQNames="true">
     <variable name="jump" expression="" defaultValue="&quot;field_name&quot;" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
@@ -103,16 +103,6 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="sewi_odoo_menu_categ" value="&lt;menuitem id=&quot;$moduleName$_$categName$_menu_categ&quot;&#10;          name=&quot;$moduleName1$_$categName1$_menu_categ&quot;&#10;          parent=&quot;$moduleName1$_menu_root&quot;&#10;          string=&quot;$categName2$&quot;&#10;          sequence=&quot;10&quot;/&gt;" description="" toReformat="false" toShortenFQNames="true">
-    <variable name="moduleName" expression="" defaultValue="&quot;module_name&quot;" alwaysStopAt="true" />
-    <variable name="categName" expression="" defaultValue="&quot;categ_name&quot;" alwaysStopAt="true" />
-    <variable name="moduleName1" expression="decapitalize(moduleName)" defaultValue="" alwaysStopAt="false" />
-    <variable name="categName1" expression="decapitalize(categName)" defaultValue="" alwaysStopAt="false" />
-    <variable name="categName2" expression="capitalize(underscoresToSpaces(categName))" defaultValue="" alwaysStopAt="false" />
-    <context>
-      <option name="XML" value="true" />
-    </context>
-  </template>
   <template name="sewi_odoo_menu_action" value="&lt;record id=&quot;$modelName1$_view_action&quot; model=&quot;ir.actions.act_window&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$modelName2$.view.action&lt;/field&gt;&#10;    &lt;field name=&quot;type&quot;&gt;ir.actions.act_window&lt;/field&gt;&#10;    &lt;field name=&quot;res_model&quot;&gt;$modelName$&lt;/field&gt;&#10;    &lt;field name=&quot;view_mode&quot;&gt;tree,form&lt;/field&gt;&#10;    &lt;field name=&quot;help&quot; type=&quot;html&quot;&gt;&#10;      &lt;p class=&quot;oe_view_nocontent_create&quot;&gt;&#10;        &lt;!-- Add Text Here --&gt;&#10;      &lt;/p&gt;&lt;p&gt;&#10;        &lt;!-- More details about what a user can do with this object will be OK --&gt;&#10;      &lt;/p&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;&#10;&#10;&lt;menuitem id=&quot;$modelName1$_$actionName$_menu_action&quot;&#10;          name=&quot;$modelName1$_$actionName1$_menu_action&quot;&#10;          parent=&quot;$jump$&quot;&#10;          action=&quot;$modelName1$_view_action&quot;&#10;          sequence=&quot;10&quot;/&gt;" description="" toReformat="false" toShortenFQNames="true">
     <variable name="modelName" expression="" defaultValue="&quot;model.name&quot;" alwaysStopAt="true" />
     <variable name="actionName" expression="" defaultValue="&quot;action_name&quot;" alwaysStopAt="true" />
@@ -143,9 +133,9 @@
     </context>
   </template>
   <template name="sewi_odoo_xml_notebook" value="&lt;notebook&gt;&#10;    &lt;page string=&quot;$string$&quot; name=&quot;$name$&quot;&gt;&#10;        &lt;group&gt;&#10;            &lt;field name=&quot;$fieldName$&quot;/&gt;&#10;        &lt;/group&gt;&#10;    &lt;/page&gt;&#10;&lt;/notebook&gt;" description="" toReformat="false" toShortenFQNames="true">
-    <variable name="string" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="fieldName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(name)))" defaultValue="&quot;string&quot;" alwaysStopAt="false" />
+    <variable name="fieldName" expression="" defaultValue="&quot;fieldName&quot;" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
@@ -176,23 +166,23 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="sewi_odoo_tree" value="&lt;record id=&quot;$modelName2$_view_tree&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$modelName1$.view.tree&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;$modelName$&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;tree&gt;&#10;            &lt;field name=&quot;name&quot;/&gt;&#10;        &lt;/tree&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;&#10;" description="" toReformat="false" toShortenFQNames="true">
-    <variable name="modelName" expression="" defaultValue="&quot;model.name&quot;" alwaysStopAt="true" />
-    <variable name="modelName1" expression="decapitalize(modelName)" defaultValue="" alwaysStopAt="false" />
-    <variable name="modelName2" expression="snakeCase(modelName)" defaultValue="" alwaysStopAt="false" />
+  <template name="sewi_odoo_xml_tree" value="&lt;record id=&quot;$moduleNameSnake$_$modelNameSnake$_tree_view&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$viewName$.view.tree&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;$modelName$&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;tree&gt;&#10;            $END$&#10;        &lt;/tree&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="modelName" expression="regularExpression(regularExpression(fileName(), &quot;_view.*&quot;, &quot;&quot;), &quot;_&quot;, &quot;\\.&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="moduleNameSnake" expression="regularExpression(groovyScript(&quot;_1.split('/')[-3]&quot;, fileRelativePath()), &quot;_view.*&quot;, &quot;&quot;)" defaultValue="" alwaysStopAt="false" />
+    <variable name="modelNameSnake" expression="regularExpression(modelName, &quot;\\.&quot;, &quot;_&quot;)" defaultValue="" alwaysStopAt="false" />
+    <variable name="viewName" expression="concat(regularExpression(moduleNameSnake, &quot;_&quot;, &quot;\\.&quot;), &quot;.&quot;, modelName)" defaultValue="" alwaysStopAt="false" />
     <context>
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="sewi_odoo_xml_xpath" value="&lt;xpath expr=&quot;//field[@name='$1$']&quot; position=&quot;$2$&quot;&gt;&#10;    $3$&#10;&lt;/xpath&gt;" description="" toReformat="false" toShortenFQNames="true">
-    <variable name="1" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
-    <variable name="2" expression="" defaultValue="" alwaysStopAt="true" />
-    <variable name="3" expression="" defaultValue="" alwaysStopAt="true" />
+  <template name="sewi_odoo_xml_xpath" value="&lt;xpath expr=&quot;//field[@name='$fieldName$']&quot; position=&quot;$position$&quot;&gt;&#10;    $END$&#10;&lt;/xpath&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="fieldName" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="position" expression="" defaultValue="&quot;after&quot;" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="sewi_odoo_xml_assets_backend" value="&lt;template id=&quot;assets_backend&quot; name=&quot;$moduleName$_assets&quot; inherit_id=&quot;web.assets_backend&quot;&gt;&#10;&lt;xpath expr=&quot;.&quot; position=&quot;inside&quot;&gt;&#10;    &lt;link rel=&quot;stylesheet&quot; href=&quot;/$moduleName1$/static/src/less/$moduleName1$.less&quot;/&gt;&#10;    &lt;script type=&quot;text/javascript&quot; src=&quot;/$moduleName1$/static/src/js/$moduleName1$.js&quot;/&gt;&#10;&lt;/xpath&gt;&#10;&lt;/template&gt;" description="" toReformat="false" toShortenFQNames="true">
+  <template name="sewi_odoo_toDo_xml_assets_backend" value="&lt;template id=&quot;assets_backend&quot; name=&quot;$moduleName$_assets&quot; inherit_id=&quot;web.assets_backend&quot;&gt;&#10;&lt;xpath expr=&quot;.&quot; position=&quot;inside&quot;&gt;&#10;    &lt;link rel=&quot;stylesheet&quot; href=&quot;/$moduleName1$/static/src/less/$moduleName1$.less&quot;/&gt;&#10;    &lt;script type=&quot;text/javascript&quot; src=&quot;/$moduleName1$/static/src/js/$moduleName1$.js&quot;/&gt;&#10;&lt;/xpath&gt;&#10;&lt;/template&gt;" description="" toReformat="false" toShortenFQNames="true">
     <variable name="moduleName" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="moduleName1" expression="decapitalize(moduleName)" defaultValue="" alwaysStopAt="false" />
     <context>
@@ -487,11 +477,72 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="sewi_odoo_xml_menu_root" value=" &lt;menuitem id=&quot;$moduleName$_menu_root&quot;&#10;           name=&quot;$menuName$&quot;&#10;           web_icon=&quot;$moduleName$,static/description/icon.png&quot;&#10;           action=&quot;$actionName$&quot;&#10;           sequence=&quot;$sequence$&quot;/&gt;" description="" toReformat="false" toShortenFQNames="true">
-    <variable name="moduleName" expression="groovyScript(&quot;_1.split('/')[-3]&quot;, fileRelativePath()) " defaultValue="" alwaysStopAt="true" />
+  <template name="sewi_odoo_xml_menu_root" value=" &lt;menuitem id=&quot;$moduleName$_menu_app_root&quot;&#10;           name=&quot;$menuName$&quot;&#10;           web_icon=&quot;$moduleName$,static/description/icon.png&quot;&#10;           action=&quot;$actionName$&quot;&#10;           sequence=&quot;$sequence$&quot;/&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="moduleName" expression="groovyScript(&quot;_1.split('/')[-3]&quot;, fileRelativePath()) " defaultValue="" alwaysStopAt="false" />
     <variable name="menuName" expression="" defaultValue="&quot;menuName&quot;" alwaysStopAt="true" />
     <variable name="actionName" expression="" defaultValue="&quot;base.action_res_users&quot;" alwaysStopAt="true" />
     <variable name="sequence" expression="" defaultValue="&quot;10&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_menu_child" value=" &lt;menuitem id=&quot;$moduleName$_menu_$name$&quot;&#10;           name=&quot;$menuName$&quot;&#10;           parent=&quot;$parentMenu$&quot;&#10;           action=&quot;$actionName$&quot;&#10;           sequence=&quot;$sequence$&quot;/&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="moduleName" expression="groovyScript(&quot;_1.split('/')[-3]&quot;, fileRelativePath()) " defaultValue="" alwaysStopAt="true" />
+    <variable name="name" expression="" defaultValue="&quot;name&quot;" alwaysStopAt="true" />
+    <variable name="menuName" expression="capitalize(spaceSeparated(camelCase(name)))" defaultValue="&quot;menuName&quot;" alwaysStopAt="true" />
+    <variable name="parentMenu" expression="" defaultValue="&quot;parent_menu_id&quot;" alwaysStopAt="true" />
+    <variable name="actionName" expression="" defaultValue="&quot;base.action_res_users&quot;" alwaysStopAt="true" />
+    <variable name="sequence" expression="" defaultValue="&quot;10&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_notebook_page" value="&lt;page string=&quot;$string$&quot; name=&quot;$name$&quot;&gt;&#10;    &lt;group&gt;&#10;        &lt;field name=&quot;$fieldName$&quot;/&gt;&#10;    &lt;/group&gt;&#10;&lt;/page&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="name" expression="" defaultValue="&quot;pageName&quot;" alwaysStopAt="true" />
+    <variable name="string" expression="capitalize(spaceSeparated(camelCase(name)))" defaultValue="&quot;string&quot;" alwaysStopAt="false" />
+    <variable name="fieldName" expression="" defaultValue="&quot;fieldName&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_action_window" value="&lt;record id=&quot;$moduleName$_$modelNameSnake$_action_window_$actionNameSnake$&quot; model=&quot;ir.actions.act_window&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$actionName$&lt;/field&gt;&#10;    &lt;field name=&quot;type&quot;&gt;ir.actions.act_window&lt;/field&gt;&#10;    &lt;field name=&quot;res_model&quot;&gt;$modelName$&lt;/field&gt;&#10;    &lt;field name=&quot;view_mode&quot;&gt;tree,kanban,form&lt;/field&gt;&#10;    &lt;field name=&quot;target&quot;&gt;main&lt;/field&gt;&#10;    &lt;!--       &lt;field name=&quot;view_ids&quot; eval=&quot;[(5, 0, 0),--&gt;&#10;    &lt;!--           (0, 0, {'view_mode': 'tree', 'view_id': ref('')}),--&gt;&#10;    &lt;!--           (0, 0, {'view_mode': 'kanban', 'view_id': ref('')}),--&gt;&#10;    &lt;!--           (0, 0, {'view_mode': 'form', 'view_id': ref('')})]&quot;/&gt;--&gt;&#10;    &lt;!--       &lt;field name=&quot;search_view_id&quot; ref=&quot;search_view_id&quot;/&gt;--&gt;&#10;    &lt;!--       &lt;field name=&quot;help&quot; type=&quot;html&quot;&gt;--&gt;&#10;    &lt;!--           &lt;p class=&quot;o_view_nocontent_smiling_face&quot;&gt;--&gt;&#10;    &lt;!--               Create a new document--&gt;&#10;    &lt;!--           &lt;/p&gt;--&gt;&#10;    &lt;!--           &lt;p&gt;--&gt;&#10;    &lt;!--               Also you will find here all the related documents and download it by clicking on any individual document.--&gt;&#10;    &lt;!--           &lt;/p&gt;--&gt;&#10;    &lt;!--       &lt;/field&gt;--&gt;&#10;&lt;/record&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="moduleName" expression="groovyScript(&quot;_1.split('/')[-3]&quot;, fileRelativePath()) " defaultValue="" alwaysStopAt="false" />
+    <variable name="actionName" expression="" defaultValue="&quot;My Action&quot;" alwaysStopAt="true" />
+    <variable name="modelName" expression="" defaultValue="&quot;res.partner&quot;" alwaysStopAt="true" />
+    <variable name="actionNameSnake" expression="snakeCase(actionName)" defaultValue="" alwaysStopAt="false" />
+    <variable name="modelNameSnake" expression="snakeCase(modelName)" defaultValue="" alwaysStopAt="false" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_action_server" value="&lt;record id=&quot;$moduleName$_action_server_$actionNameSnake$&quot; model=&quot;ir.actions.server&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$actionName$&lt;/field&gt;&#10;    &lt;field name=&quot;type&quot;&gt;ir.actions.server&lt;/field&gt;&#10;    &lt;field name=&quot;model_id&quot; ref=&quot;$modelId$&quot;/&gt;&#10;    &lt;field name=&quot;binding_model_id&quot; ref=&quot;$bindingModelId$&quot;/&gt;&#10;    &lt;field name=&quot;state&quot;&gt;code&lt;/field&gt;&#10;    &lt;field name=&quot;code&quot;&gt;$code$&lt;/field&gt;&#10;&lt;/record&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="moduleName" expression="groovyScript(&quot;_1.split('/')[-3]&quot;, fileRelativePath()) " defaultValue="" alwaysStopAt="false" />
+    <variable name="actionName" expression="" defaultValue="&quot;My Action&quot;" alwaysStopAt="true" />
+    <variable name="actionNameSnake" expression="snakeCase(actionName)" defaultValue="" alwaysStopAt="false" />
+    <variable name="modelId" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="bindingModelId" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="code" expression="" defaultValue="&quot;model.funcion()&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_tree_inherit" value="&lt;record id=&quot;$moduleNameSnake$_$modelNameSnake$_tree_view_inherit&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$viewName$.view.tree.inherit&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;$modelName$&lt;/field&gt;&#10;    &lt;field name=&quot;inherit_id&quot; ref=&quot;$inheritId$&quot; /&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;xpath expr=&quot;//field[@name='$fieldName$']&quot; position=&quot;$fieldPosition$&quot;&gt;&#10;            $END$&#10;        &lt;/xpath&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;&#10;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="modelName" expression="regularExpression(regularExpression(fileName(), &quot;_view.*&quot;, &quot;&quot;), &quot;_&quot;, &quot;\\.&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="moduleNameSnake" expression="regularExpression(groovyScript(&quot;_1.split('/')[-3]&quot;, fileRelativePath()), &quot;_view.*&quot;, &quot;&quot;)" defaultValue="" alwaysStopAt="false" />
+    <variable name="modelNameSnake" expression="regularExpression(modelName, &quot;\\.&quot;, &quot;_&quot;)" defaultValue="" alwaysStopAt="false" />
+    <variable name="viewName" expression="concat(regularExpression(moduleNameSnake, &quot;_&quot;, &quot;\\.&quot;), &quot;.&quot;, modelName)" defaultValue="" alwaysStopAt="false" />
+    <variable name="inheritId" expression="" defaultValue="&quot;inherit_id&quot;" alwaysStopAt="true" />
+    <variable name="fieldName" expression="" defaultValue="&quot;fieldName&quot;" alwaysStopAt="true" />
+    <variable name="fieldPosition" expression="" defaultValue="&quot;after&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_action_override" value="&lt;record id=&quot;$originalId$&quot; model=&quot;ir.actions.act_window&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$actionName$&lt;/field&gt;&#10;    &lt;field name=&quot;type&quot;&gt;ir.actions.act_window&lt;/field&gt;&#10;    &lt;field name=&quot;res_model&quot;&gt;$modelName$&lt;/field&gt;&#10;    &lt;field name=&quot;view_mode&quot;&gt;$viewMode$&lt;/field&gt;&#10;    &lt;field name=&quot;target&quot;&gt;main&lt;/field&gt;&#10;    &lt;!--       &lt;field name=&quot;view_ids&quot; eval=&quot;[(5, 0, 0),--&gt;&#10;    &lt;!--           (0, 0, {'view_mode': 'tree', 'view_id': ref('')}),--&gt;&#10;    &lt;!--           (0, 0, {'view_mode': 'kanban', 'view_id': ref('')}),--&gt;&#10;    &lt;!--           (0, 0, {'view_mode': 'form', 'view_id': ref('')})]&quot;/&gt;--&gt;&#10;    &lt;!--       &lt;field name=&quot;search_view_id&quot; ref=&quot;search_view_id&quot;/&gt;--&gt;&#10;    &lt;!--       &lt;field name=&quot;help&quot; type=&quot;html&quot;&gt;--&gt;&#10;    &lt;!--           &lt;p class=&quot;o_view_nocontent_smiling_face&quot;&gt;--&gt;&#10;    &lt;!--               Create a new document--&gt;&#10;    &lt;!--           &lt;/p&gt;--&gt;&#10;    &lt;!--           &lt;p&gt;--&gt;&#10;    &lt;!--               Also you will find here all the related documents and download it by clicking on any individual document.--&gt;&#10;    &lt;!--           &lt;/p&gt;--&gt;&#10;    &lt;!--       &lt;/field&gt;--&gt;&#10;&lt;/record&gt;$END$" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="originalId" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="actionName" expression="" defaultValue="&quot;Override Action Name&quot;" alwaysStopAt="true" />
+    <variable name="modelName" expression="" defaultValue="&quot;res.partner&quot;" alwaysStopAt="true" />
+    <variable name="viewMode" expression="" defaultValue="&quot;tree,kanban,form&quot;" alwaysStopAt="true" />
     <context>
       <option name="XML" value="true" />
     </context>
