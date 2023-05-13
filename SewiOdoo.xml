@@ -546,4 +546,20 @@
       <option name="XML" value="true" />
     </context>
   </template>
+  <template name="sewi_odoo_py_action_window_dict" value="action = {&#10;    &quot;name&quot;: _(&quot;$actionName$&quot;),&#10;    &quot;type&quot;: &quot;ir.actions.act_window&quot;,&#10;    &quot;res_model&quot;: &quot;$modelName$&quot;,&#10;    &quot;context&quot;: {},&#10;    &quot;view_mode&quot;: &quot;$viewMode$&quot;,&#10;    &quot;target&quot;: &quot;$target$&quot;,&#10;    &quot;res_id&quot;: $resId$,&#10;}" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="actionName" expression="" defaultValue="&quot;actionName&quot;" alwaysStopAt="true" />
+    <variable name="modelName" expression="" defaultValue="&quot;res.partner&quot;" alwaysStopAt="true" />
+    <variable name="viewMode" expression="" defaultValue="&quot;tree,kanban,form&quot;" alwaysStopAt="true" />
+    <variable name="target" expression="" defaultValue="&quot;self&quot;" alwaysStopAt="true" />
+    <variable name="resId" expression="" defaultValue="&quot;resId&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
+  <template name="sewi_odoo_py_action_window_ref" value="ids = []&#10;action = self.env.ref(&quot;$actionXmlId$&quot;).read()[0]&#10;# action[&quot;name&quot;] = _(&quot;Contacts&quot;)&#10;# action[&quot;res_id&quot;] = self.id&#10;# action[&quot;domain&quot;] = [('id', 'in', ids)]&#10;# action[&quot;context&quot;] = {}" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="actionXmlId" expression="" defaultValue="&quot;actionXmlId&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="Python" value="true" />
+    </context>
+  </template>
 </templateSet>
