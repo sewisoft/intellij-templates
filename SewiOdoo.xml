@@ -138,7 +138,7 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="sewi_odoo_py_manifest" value="{&#10;  &quot;name&quot;: &quot;$name$&quot;,&#10;  &quot;summary&quot;: &quot;&quot;&quot;&#10;    $summary$&#10;  &quot;&quot;&quot;,&#10;  &quot;author&quot;: &quot;sewisoft&quot;,&#10;  &quot;license&quot;: &quot;LGPL-3&quot;,&#10;  &quot;website&quot;: &quot;https://sewisoft.de&quot;,&#10;  &quot;application&quot;: $autoInstall$,&#10;  &quot;sequence&quot;: 1,&#10;  &quot;category&quot;: &quot;$category$&quot;,&#10;  &quot;version&quot;: &quot;16.0.1.0.0&quot;,&#10;  &quot;depends&quot;: [&#10;    &quot;base&quot;,&#10;  ],&#10;  &quot;installable&quot;: True,&#10;  &quot;auto_install&quot;: False,&#10;  # &quot;data&quot;: [&#10;  #   &quot;security/ir.model.access.csv&quot;,&#10;  #   &quot;views/views.xml&quot;,&#10;  #   &quot;views/templates.xml&quot;,&#10;  # ],&#10;  # &quot;external_dependencies&quot;: {&#10;  #   &quot;python&quot;: [&#10;  # &#10;  #   ]},&#10;  # &#10;  # &quot;pre_init_hook&quot;: &quot;pre_init_hook&quot;,&#10;  # &quot;post_init_hook&quot;: &quot;post_init_hook&quot;,&#10;  # &quot;uninstall_hook&quot;: &quot;uninstall_hook&quot;&#10;  # &quot;demo&quot;: [&#10;  #   &quot;demo/demo.xml&quot;,&#10;  # ],&#10;}" description="" toReformat="false" toShortenFQNames="true">
+  <template name="sewi_odoo_py_manifest" value="{&#10;    &quot;name&quot;: &quot;$name$&quot;,&#10;    &quot;summary&quot;: &quot;&quot;&quot;&#10;    $summary$&#10;    &quot;&quot;&quot;,&#10;    &quot;author&quot;: &quot;sewisoft&quot;,&#10;    &quot;license&quot;: &quot;LGPL-3&quot;,&#10;    &quot;website&quot;: &quot;https://sewisoft.de&quot;,&#10;    &quot;application&quot;: $autoInstall$,&#10;    &quot;sequence&quot;: 1,&#10;    &quot;category&quot;: &quot;$category$&quot;,&#10;    &quot;version&quot;: &quot;16.0.1.0.0&quot;,&#10;    &quot;depends&quot;: [&#10;        &quot;base&quot;,&#10;    ],&#10;    &quot;installable&quot;: True,&#10;    &quot;auto_install&quot;: False,&#10;    # &quot;data&quot;: [&#10;    #   &quot;security/ir.model.access.csv&quot;,&#10;    #   &quot;views/views.xml&quot;,&#10;    #   &quot;views/templates.xml&quot;,&#10;    # ],&#10;    # &quot;external_dependencies&quot;: {&#10;    #   &quot;python&quot;: [&#10;    # &#10;    #   ]},&#10;    # &#10;    # &quot;pre_init_hook&quot;: &quot;pre_init_hook&quot;,&#10;    # &quot;post_init_hook&quot;: &quot;post_init_hook&quot;,&#10;    # &quot;uninstall_hook&quot;: &quot;uninstall_hook&quot;&#10;    # &quot;demo&quot;: [&#10;    #   &quot;demo/demo.xml&quot;,&#10;    # ],&#10;}" description="" toReformat="false" toShortenFQNames="true">
     <variable name="name" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="summary" expression="" defaultValue="" alwaysStopAt="true" />
     <variable name="autoInstall" expression="" defaultValue="&quot;False&quot;" alwaysStopAt="true" />
@@ -403,7 +403,7 @@
       <option name="XML" value="true" />
     </context>
   </template>
-  <template name="sewi_odoo_xml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;odoo&gt;&#10;    &#10;&lt;/odoo&gt;" description="" toReformat="false" toShortenFQNames="true">
+  <template name="sewi_odoo_xml" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;&#10;&lt;odoo&gt;&#10;    $END$&#10;&lt;/odoo&gt;" description="" toReformat="false" toShortenFQNames="true">
     <context>
       <option name="XML" value="true" />
     </context>
@@ -494,7 +494,7 @@
     </context>
   </template>
   <template name="sewi_odoo_xml_form" value="&lt;record id=&quot;$moduleNameSnake$_$modelNameSnake$_form_view&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$viewName$.view.form&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;$modelName$&lt;/field&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;form&gt;&#10;            &lt;sheet&gt;&#10;                &lt;!-- &lt;div class=&quot;oe_button_box&quot; name=&quot;button_box&quot;&gt; --&gt;&#10;                &lt;!-- &lt;/div&gt; --&gt;&#10;                &lt;div class=&quot;oe_title&quot;&gt;&#10;                    &lt;label for=&quot;name&quot; class=&quot;oe_edit_only&quot;/&gt;&#10;                    &lt;h1&gt;&lt;field name=&quot;name&quot; class=&quot;oe_inline&quot;/&gt;&lt;/h1&gt;&#10;                &lt;/div&gt;&#10;                &lt;group&gt;&#10;                    $END$&#10;                &lt;/group&gt;&#10;            &lt;/sheet&gt;&#10;        &lt;/form&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;&#10;" description="" toReformat="false" toShortenFQNames="true">
-    <variable name="modelName" expression="regularExpression(regularExpression(fileName(), &quot;_view.*&quot;, &quot;&quot;), &quot;_&quot;, &quot;\\.&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="modelName" expression="regularExpression(regularExpression(fileName(), &quot;(_views?)?\\..*&quot;, &quot;&quot;), &quot;_&quot;, &quot;\\.&quot;)" defaultValue="" alwaysStopAt="true" />
     <variable name="moduleNameSnake" expression="regularExpression(groovyScript(&quot;_1.split('/')[-3]&quot;, fileRelativePath()), &quot;_view.*&quot;, &quot;&quot;)" defaultValue="" alwaysStopAt="false" />
     <variable name="modelNameSnake" expression="regularExpression(modelName, &quot;\\.&quot;, &quot;_&quot;)" defaultValue="" alwaysStopAt="false" />
     <variable name="viewName" expression="concat(regularExpression(moduleNameSnake, &quot;_&quot;, &quot;\\.&quot;), &quot;.&quot;, modelName)" defaultValue="" alwaysStopAt="false" />
@@ -503,7 +503,7 @@
     </context>
   </template>
   <template name="sewi_odoo_xml_form_inherit" value="&lt;record id=&quot;$moduleNameSnake$_$modelNameSnake$_form_view_inherit&quot; model=&quot;ir.ui.view&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$viewName$.view.form.inherit&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;$modelName$&lt;/field&gt;&#10;    &lt;field name=&quot;inherit_id&quot; ref=&quot;$inheritId$&quot; /&gt;&#10;    &lt;field name=&quot;arch&quot; type=&quot;xml&quot;&gt;&#10;        &lt;xpath expr=&quot;//field[@name='$fieldName$']&quot; position=&quot;$fieldPosition$&quot;&gt;&#10;            $END$&#10;        &lt;/xpath&gt;&#10;    &lt;/field&gt;&#10;&lt;/record&gt;&#10;" description="" toReformat="false" toShortenFQNames="true">
-    <variable name="modelName" expression="regularExpression(regularExpression(fileName(), &quot;_view.*&quot;, &quot;&quot;), &quot;_&quot;, &quot;\\.&quot;)" defaultValue="" alwaysStopAt="true" />
+    <variable name="modelName" expression="regularExpression(regularExpression(fileName(), &quot;(_views?)?\\..*&quot;, &quot;&quot;), &quot;_&quot;, &quot;\\.&quot;)" defaultValue="" alwaysStopAt="true" />
     <variable name="moduleNameSnake" expression="regularExpression(groovyScript(&quot;_1.split('/')[-3]&quot;, fileRelativePath()), &quot;_view.*&quot;, &quot;&quot;)" defaultValue="" alwaysStopAt="false" />
     <variable name="modelNameSnake" expression="regularExpression(modelName, &quot;\\.&quot;, &quot;_&quot;)" defaultValue="" alwaysStopAt="false" />
     <variable name="viewName" expression="concat(regularExpression(moduleNameSnake, &quot;_&quot;, &quot;\\.&quot;), &quot;.&quot;, modelName)" defaultValue="" alwaysStopAt="false" />
@@ -567,6 +567,18 @@
       <option name="Vue" value="false" />
       <option name="XML" value="false" />
       <option name="XML_ATTRIBUTE" value="false" />
+    </context>
+  </template>
+  <template name="sewi_odoo_xml_action_report" value="&lt;record id=&quot;$moduleName$_action_report_$actionNameSnake$&quot; model=&quot;ir.actions.report&quot;&gt;&#10;    &lt;field name=&quot;name&quot;&gt;$actionName$&lt;/field&gt;&#10;    &lt;field name=&quot;model&quot;&gt;$modelName$&lt;/field&gt;&#10;    &lt;field name=&quot;report_type&quot;&gt;$reportType$&lt;/field&gt;&#10;    &lt;field name=&quot;report_name&quot;&gt;$reportName$&lt;/field&gt;&#10;    &lt;field name=&quot;binding_model_id&quot; ref=&quot;$bindingModel$&quot;/&gt;&#10;&lt;/record&gt;" description="" toReformat="false" toShortenFQNames="true">
+    <variable name="moduleName" expression="groovyScript(&quot;_1.split('/')[-3]&quot;, fileRelativePath()) " defaultValue="" alwaysStopAt="false" />
+    <variable name="actionName" expression="" defaultValue="&quot;My Action&quot;" alwaysStopAt="true" />
+    <variable name="actionNameSnake" expression="snakeCase(actionName)" defaultValue="" alwaysStopAt="false" />
+    <variable name="modelName" expression="" defaultValue="" alwaysStopAt="true" />
+    <variable name="reportType" expression="" defaultValue="&quot;qweb-pdf&quot;" alwaysStopAt="true" />
+    <variable name="reportName" expression="" defaultValue="&quot;reportName&quot;" alwaysStopAt="true" />
+    <variable name="bindingModel" expression="" defaultValue="&quot;model_xxx&quot;" alwaysStopAt="true" />
+    <context>
+      <option name="XML" value="true" />
     </context>
   </template>
 </templateSet>
